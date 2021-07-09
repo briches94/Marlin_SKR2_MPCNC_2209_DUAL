@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+restore_configs
+
+export V1_VERSION=${V1_VERSION}P
+
+$CFGDIR/common/v1-base-config
+$CFGDIR/common/3dp-config
+$CFGDIR/boards/mini-rambo
+$CFGDIR/accessories/reprap_discount_full_graphic_lcd
+$CFGDIR/accessories/aero-extruder
+$CFGDIR/accessories/auto-filament-change
+$CFGDIR/accessories/mini-rambo_e_fan
+
+export PLATFORMIO_ENV=rambo
