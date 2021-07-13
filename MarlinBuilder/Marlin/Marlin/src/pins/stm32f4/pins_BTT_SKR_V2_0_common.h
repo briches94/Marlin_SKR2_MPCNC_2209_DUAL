@@ -189,11 +189,11 @@
   #define Z_CS_PIN                          PD0
 #endif
 
-#define E0_STEP_PIN                         PD7
-#define E0_DIR_PIN                          PD7
-#define E0_ENABLE_PIN                       PD7
+#define E0_STEP_PIN                         PD700   //FAKE PIN
+#define E0_DIR_PIN                          PD700   //FAKE PIN
+#define E0_ENABLE_PIN                       PD700   //FAKE PIN
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PD7
+  #define E0_CS_PIN                         PD700   //FAKE PIN
 #endif
 
 #define E1_STEP_PIN                         PD15
@@ -294,11 +294,14 @@
   #define Z_SERIAL_TX_PIN                   PD0
   #define Z_SERIAL_RX_PIN                   PD0
 
-  #define E0_SERIAL_TX_PIN                  PC6
-  #define E0_SERIAL_RX_PIN                  PC6
+  #define E0_SERIAL_TX_PIN                  PC600   //FAKE PIN
+  #define E0_SERIAL_RX_PIN                  PC600   //FAKE PIN
 
-  #define E1_SERIAL_TX_PIN                  PD12
-  #define E1_SERIAL_RX_PIN                  PD12
+  #define E1_SERIAL_TX_PIN                  PC6
+  #define E1_SERIAL_RX_PIN                  PC6
+
+  #define E2_SERIAL_TX_PIN                  PD12
+  #define E2_SERIAL_RX_PIN                  PD12
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
