@@ -189,18 +189,26 @@
   #define Z_CS_PIN                          PD0
 #endif
 
-#define E0_STEP_PIN                         PD15
-#define E0_DIR_PIN                          PD14
-#define E0_ENABLE_PIN                       PC7
+#define E0_STEP_PIN                         PD7
+#define E0_DIR_PIN                          PD7
+#define E0_ENABLE_PIN                       PD7
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PC6
+  #define E0_CS_PIN                         PD7
 #endif
 
-#define E1_STEP_PIN                         PD11
-#define E1_DIR_PIN                          PD10
-#define E1_ENABLE_PIN                       PD13
+#define E1_STEP_PIN                         PD15
+#define E1_DIR_PIN                          PD14
+#define E1_ENABLE_PIN                       PC7
 #ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PD12
+  #define E1_CS_PIN                         PC6
+#endif
+
+
+#define E2_STEP_PIN                         PD11
+#define E2_DIR_PIN                          PD10
+#define E2_ENABLE_PIN                       PD13
+#ifndef E2_CS_PIN
+  #define E2_CS_PIN                         PD12
 #endif
 
 //
