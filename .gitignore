@@ -1,0 +1,2 @@
+# ignore all .o objects
+*.o
