@@ -357,10 +357,10 @@ void menu_motion() {
       GCODES_ITEM(MSG_AUTO_HOME_Z, PSTR("G28Z"));
     #endif
     #if LINEAR_AXES >= 4
-      GCODES_ITEM(MSG_AUTO_HOME_I, PSTR("G28" I_STR));
+      GCODES_ITEM(MSG_AUTO_HOME_I, PSTR("G28I"));
     #endif
     #if LINEAR_AXES >= 5
-      GCODES_ITEM(MSG_AUTO_HOME_J, PSTR("G28" J_STR));
+      GCODES_ITEM(MSG_AUTO_HOME_J, PSTR("G28J"));
     #endif
     #if LINEAR_AXES >= 6
       GCODES_ITEM(MSG_AUTO_HOME_K, PSTR("G28" K_STR));

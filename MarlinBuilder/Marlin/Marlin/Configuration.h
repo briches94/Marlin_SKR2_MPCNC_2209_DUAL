@@ -117,7 +117,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 250000
+#define BAUDRATE 115200
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -165,7 +165,7 @@
  *
  * :[3, 4, 5, 6]
  */
-//#define LINEAR_AXES 3
+#define LINEAR_AXES 5
 
 /**
  * Axis codes for additional axes:
@@ -181,10 +181,10 @@
  * I (AXIS4), J (AXIS5), K (AXIS6).
  */
 #if LINEAR_AXES >= 4
-  #define AXIS4_NAME 'A' // :['A', 'B', 'C', 'U', 'V', 'W']
+  #define AXIS4_NAME 'U' // :['A', 'B', 'C', 'U', 'V', 'W']
 #endif
 #if LINEAR_AXES >= 5
-  #define AXIS5_NAME 'B' // :['A', 'B', 'C', 'U', 'V', 'W']
+  #define AXIS5_NAME 'V' // :['A', 'B', 'C', 'U', 'V', 'W']
 #endif
 #if LINEAR_AXES >= 6
   #define AXIS6_NAME 'C' // :['A', 'B', 'C', 'U', 'V', 'W']
@@ -752,8 +752,8 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-//#define USE_IMIN_PLUG
-//#define USE_JMIN_PLUG
+#define USE_IMIN_PLUG
+#define USE_JMIN_PLUG
 //#define USE_KMIN_PLUG
 //#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
@@ -836,13 +836,13 @@
 #define X_DRIVER_TYPE TMC2209 // TMC2209 // A4988
 #define Y_DRIVER_TYPE TMC2209 // TMC2209 // A4988
 #define Z_DRIVER_TYPE TMC2209 // TMC2209 // A4988
-#define X2_DRIVER_TYPE TMC2209 // A4988
-#define Y2_DRIVER_TYPE TMC2209 // A4988
-#define Z2_DRIVER_TYPE TMC2209 // A4988
+// #define X2_DRIVER_TYPE TMC2209 // A4988
+// #define Y2_DRIVER_TYPE TMC2209 // A4988
+// #define Z2_DRIVER_TYPE TMC2209 // A4988
 //#define Z3_DRIVER_TYPE TMC2209 // A4988
 //#define Z4_DRIVER_TYPE A4988
-//#define I_DRIVER_TYPE  A4988
-//#define J_DRIVER_TYPE  A4988
+#define I_DRIVER_TYPE  TMC2209 //A4988
+#define J_DRIVER_TYPE  TMC2209 //A4988
 //#define K_DRIVER_TYPE  A4988
 #define E0_DRIVER_TYPE TMC2209 // TMC2209 // A4988
 #define E1_DRIVER_TYPE TMC2209 // A4988
@@ -899,14 +899,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT { 200, 200, 800 } // { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 200, 200, 800, 200, 200 } // { 80, 80, 400, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE { 50, 50, 15} // { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE { 50, 50, 15, 50, 50} // { 300, 300, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -919,7 +919,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION { 180, 180, 80 } // { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION { 180, 180, 80, 180, 180 } // { 3000, 3000, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1269,8 +1269,8 @@
 #define Y_ENABLE_ON 0
 #define Z_ENABLE_ON 0
 #define E_ENABLE_ON 0 // For all extruders
-//#define I_ENABLE_ON 0
-//#define J_ENABLE_ON 0
+#define I_ENABLE_ON 0
+#define J_ENABLE_ON 0
 //#define K_ENABLE_ON 0
 
 // Disable axis steppers immediately when they're not being stepped.
@@ -1278,8 +1278,8 @@
 #define DISABLE_X false
 #define DISABLE_Y false
 #define DISABLE_Z false
-//#define DISABLE_I false
-//#define DISABLE_J false
+#define DISABLE_I false
+#define DISABLE_J false
 //#define DISABLE_K false
 
 // Turn off the display blinking that warns about possible accuracy reduction
@@ -1296,8 +1296,8 @@
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR true
 #define INVERT_Z_DIR false
-//#define INVERT_I_DIR false
-//#define INVERT_J_DIR false
+#define INVERT_I_DIR true     // false
+#define INVERT_J_DIR false    // false
 //#define INVERT_K_DIR false
 
 // @section extruder
@@ -1334,8 +1334,8 @@
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-//#define I_HOME_DIR -1
-//#define J_HOME_DIR -1
+#define I_HOME_DIR -1
+#define J_HOME_DIR -1
 //#define K_HOME_DIR -1
 
 // @section machine
@@ -1351,10 +1351,10 @@
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 200
-//#define I_MIN_POS 0
-//#define I_MAX_POS 50
-//#define J_MIN_POS 0
-//#define J_MAX_POS 50
+#define I_MIN_POS 0
+#define I_MAX_POS X_BED_SIZE
+#define J_MIN_POS 0
+#define J_MAX_POS Y_BED_SIZE
 //#define K_MIN_POS 0
 //#define K_MAX_POS 50
 
@@ -1719,7 +1719,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (3*60) } // { (50*60), (50*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (3*60), (30*60), (3*60) } // { (50*60), (50*60), (4*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
