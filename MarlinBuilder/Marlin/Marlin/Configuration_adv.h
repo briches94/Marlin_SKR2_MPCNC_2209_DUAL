@@ -636,20 +636,20 @@
  * in X2. Dual endstop offsets can be set at runtime with 'M666 X<offset> Y<offset> Z<offset>'.
  */
 
-//#define X_DUAL_STEPPER_DRIVERS
+#define X_DUAL_STEPPER_DRIVERS
 #if ENABLED(X_DUAL_STEPPER_DRIVERS)
-  //#define INVERT_X2_VS_X_DIR    // Enable if X2 direction signal is opposite to X
-  //#define X_DUAL_ENDSTOPS
+  #define INVERT_X2_VS_X_DIR    // Enable if X2 direction signal is opposite to X
+  #define X_DUAL_ENDSTOPS
   #if ENABLED(X_DUAL_ENDSTOPS)
     #define X2_USE_ENDSTOP _XMAX_
     #define X2_ENDSTOP_ADJUSTMENT  0
   #endif
 #endif
 
-//#define Y_DUAL_STEPPER_DRIVERS
+#define Y_DUAL_STEPPER_DRIVERS
 #if ENABLED(Y_DUAL_STEPPER_DRIVERS)
-  //#define INVERT_Y2_VS_Y_DIR   // Enable if Y2 direction signal is opposite to Y
-  //#define Y_DUAL_ENDSTOPS
+  #define INVERT_Y2_VS_Y_DIR   // Enable if Y2 direction signal is opposite to Y
+  #define Y_DUAL_ENDSTOPS
   #if ENABLED(Y_DUAL_ENDSTOPS)
     #define Y2_USE_ENDSTOP _YMAX_
     #define Y2_ENDSTOP_ADJUSTMENT  0
@@ -753,8 +753,8 @@
 
 //#define SENSORLESS_BACKOFF_MM  { 2, 2, 0 }  // (mm) Backoff from endstops before sensorless homing
 
-#define HOMING_BUMP_MM { 5, 5, 2, 5, 5 } // { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
-#define HOMING_BUMP_DIVISOR { 2, 2, 4, 2, 2 } // { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
+#define HOMING_BUMP_MM { 5, 5, 2 } // { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
+#define HOMING_BUMP_DIVISOR { 2, 2, 4 } // { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
 //#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
 
@@ -926,7 +926,7 @@
 
 // @section motion
 
-#define AXIS_RELATIVE_MODES { false, false, false, false, false }
+#define AXIS_RELATIVE_MODES { false, false, false}
 
 // Add a Duplicate option for well-separated conjoined nozzles
 //#define MULTI_NOZZLE_DUPLICATION

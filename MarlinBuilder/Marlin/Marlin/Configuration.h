@@ -117,7 +117,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -165,7 +165,7 @@
  *
  * :[3, 4, 5, 6]
  */
-#define LINEAR_AXES 5
+#define LINEAR_AXES 3
 
 /**
  * Axis codes for additional axes:
@@ -841,11 +841,11 @@
 // #define Z2_DRIVER_TYPE TMC2209 // A4988
 //#define Z3_DRIVER_TYPE TMC2209 // A4988
 //#define Z4_DRIVER_TYPE A4988
-#define I_DRIVER_TYPE  TMC2209 //A4988
-#define J_DRIVER_TYPE  TMC2209 //A4988
+// #define I_DRIVER_TYPE  TMC2209 //A4988
+// #define J_DRIVER_TYPE  TMC2209 //A4988
 //#define K_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE TMC2209 // TMC2209 // A4988
-#define E1_DRIVER_TYPE TMC2209 // A4988
+// #define E0_DRIVER_TYPE TMC2209 // TMC2209 // A4988
+// #define E1_DRIVER_TYPE TMC2209 // A4988
 //#define E2_DRIVER_TYPE TMC2209 // A4988
 //#define E3_DRIVER_TYPE TMC2209 // A4988
 //#define E4_DRIVER_TYPE TMC2209 // A4988
@@ -899,14 +899,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT { 200, 200, 800, 200, 200 } // { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT { 200, 200, 800 } // { 80, 80, 400, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE { 50, 50, 15, 50, 50} // { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE { 50, 50, 15 } // { 300, 300, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -919,7 +919,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION { 180, 180, 80, 180, 180 } // { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION { 180, 180, 80} // { 3000, 3000, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1719,7 +1719,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (3*60), (30*60), (3*60) } // { (50*60), (50*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (30*60), (30*60), (3*60) } // { (50*60), (50*60), (4*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
