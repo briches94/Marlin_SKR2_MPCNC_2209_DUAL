@@ -7,6 +7,10 @@ This firmware has been automatically configured based on scripts from the
 
 ### Configuration Notes
 
+This firmware has been modified to suit an SKR 2 Rev. B
+with 5xTMC2209s. Dual X and Y motors (X2 and Y2 have reversed directions)
+and dual hardware endstops (X2 and Y2 endstops go into X_MAX and Y_MAX).
+
 (See the git diff for more detailed, exact changes from Marlin)
 
 - Configured for CNC
